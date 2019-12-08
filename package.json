@@ -2,7 +2,7 @@
   "name": "cl-pwa",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/pay-a-vegan/pay-a-vegan",
+  "homepage": "https://pay-a-vegan.github.io/pay-a-vegan",
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
