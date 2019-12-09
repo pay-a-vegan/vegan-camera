@@ -88,7 +88,7 @@ class ClCamera extends Component {
             // create random string
             const rs = Math.random().toString(36).substr(2, 5);
             localStorage.setItem(`${prefix}${rs}`, this.state.capturedImage);
-            alert('Image saved locally, it will be uploaded to your Community media library once internet connection is detected');
+            alert('Image saved locally, it will be uploaded to Pay-a-Vegan once internet connection is detected');
             this.discardImage();
             // save image to local storage
         } else {
@@ -125,7 +125,7 @@ class ClCamera extends Component {
     checkUploadStatus = (data) => {
         this.setState({ 'uploading': false });
         if (data.status === 200) {
-            alert('Image Uploaded to Community Media Library');
+            alert('Image Uploaded to Pay-a-Vegan');
             this.discardImage();
         } else {
             alert('Sorry, we encountered an error uploading your image');
@@ -151,7 +151,7 @@ class ClCamera extends Component {
             }
             this.setState({ 'uploading': false });
             if (!error) {
-                alert("All saved images have been uploaded to your Community Media Library");
+                alert("All saved images have been uploaded to Pay-a-Vegan");
             }
         }
     }

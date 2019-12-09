@@ -9,11 +9,11 @@ class Notifier extends Component {
         });
         const message = this.props.offline ?
             `
-            VeganCam is offline! Your images will be saved now and then uploaded to
-            your Community Media Library once your internet connection is back up.
+            Vegan Cam is offline! Your images will be saved now and then uploaded to
+            Pay-a-Vegan once your internet connection is back up.
         ` :
             `
-            Take a picture and it will be uploaded to your Community Media Library.
+            Take a picture and it will be uploaded to Pay-a-Vegan.
         `;
         return (
             <div className={notifyclass}>
