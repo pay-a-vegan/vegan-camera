@@ -1,9 +1,9 @@
 .notify{
     background-color: #0066B2;
-    padding: 20px;
+    padding: 2px;
     text-align: center;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .danger{
