@@ -34,13 +34,12 @@ class ClCamera extends Component {
     }
 
     render() {
-        const imageDisplay = this.state.capturedImage ?
-            <img src={this.state.capturedImage} alt="captured" width="350" />
-            :
-            <span />;
 
         const buttons = this.state.captured ?
             <div>
+            <div className="imageCanvas">
+              <img src={this.state.capturedImage} alt="captured" width="400px" />
+            </div>
                 <button className="deleteButton" onClick={this.discardImage} > Delete Photo </button>
                 <button className="captureButton" onClick={this.uploadImage} > Upload Photo </button>
             </div> :
@@ -53,12 +52,9 @@ class ClCamera extends Component {
 
         return (
             <div>
+                <video autoPlay playsInline muted id="webcam" width="100%" height="300" />
                 {uploading}
-                <video autoPlay playsInline muted id="webcam" width="100%" height="200" />
-                <br />
-                <div className="imageCanvas">
-                    {imageDisplay}
-                </div>
+
                 {buttons}
             </div>
         )
