@@ -13,7 +13,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('componentDidMount');
     window.addEventListener('online', () => {
       this.setState({ offline: false });
     });
@@ -33,11 +32,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Notifier offline={this.state.offline} />
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="Pay-a-Vegan Logo" />
-          <h1 className="App-title">Vegan Cam</h1>
-        </header>
+
         <ClCamera offline={this.state.offline}></ClCamera>
       </div>
     );

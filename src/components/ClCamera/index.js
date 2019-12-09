@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Webcam } from '../../webcam';
 import './ClCamera.css';
 import axios from 'axios';
+import Notifier from '../Notifier';
+import '../../App.css';
+import logo from '../../500x500.jpg';
 
 class ClCamera extends Component {
     constructor() {
@@ -34,12 +37,22 @@ class ClCamera extends Component {
     }
 
     render() {
+        const banner = this.state.captured ?
+          <span/>
+          :
+          <div>
+              <Notifier offline={this.state.offline} />
+              <header className="App-header">
+                <img src={logo} className="App-logo" alt="Pay-a-Vegan Logo" />
+                <h1 className="App-title">Vegan Cam</h1>
+              </header>
+          </div>
 
         const buttons = this.state.captured ?
             <div>
-            <div className="imageCanvas">
-              <img src={this.state.capturedImage} alt="captured" width="400px" />
-            </div>
+                <div className="imageCanvas">
+                  <img src={this.state.capturedImage} alt="captured" width="400px" />
+                </div>
                 <button className="deleteButton" onClick={this.discardImage} > Delete Photo </button>
                 <button className="captureButton" onClick={this.uploadImage} > Upload Photo </button>
             </div> :
@@ -52,6 +65,7 @@ class ClCamera extends Component {
 
         return (
             <div>
+                {banner}
                 <video autoPlay playsInline muted id="webcam" width="100%" height="300" />
                 {uploading}
 
